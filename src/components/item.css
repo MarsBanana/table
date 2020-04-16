@@ -1,0 +1,25 @@
+.del {
+    cursor: pointer;
+    color: red;
+    opacity: 0.8;
+    border: none;
+}
+.del:hover {
+    color: white;
+    background-color: red;
+    transition: 0.2s;
+}
+.ch {
+    cursor: pointer;
+    color: blue;
+    opacity: 0.7;
+    border: none;
+}
+.ch:hover {
+    color: white;
+    background-color: blue;
+    transition: 0.2s;
+}
+.colored {
+    background-color: cornsilk;
+}

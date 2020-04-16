@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Controls from "./containers/controls";
+import Table from "./containers/tableC";
+import Form from "./components/form";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            isAddOn: false,
+            searchedName: "",
+        };
+    }
+    changeAdd() {
+        this.setState({ isAddOn: !this.state.isAddOn });
+    }
+    searchName(name) {
+        this.setState({ searchedName: name });
+    }
+    render() {
+        const itemTemp = {
+            id: "id",
+            name: "name",
+            amount: "amount",
+            price: "price",
+        };
+        return (
+            <React.Fragment>
+                {this.state.isAddOn ? <Form item={itemTemp} submit={this.changeAdd.bind(this)} /> : null}
+                <Controls searchName={this.searchName.bind(this)} changeAdd={this.changeAdd.bind(this)} />
+                <Table searchedName={this.state.searchedName} searchName={this.searchName.bind(this)} />
+            </React.Fragment>
+        );
+    }
 }
 
 export default App;

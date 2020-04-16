@@ -1,0 +1,19 @@
+.form {
+    position: absolute;
+    left: auto;
+    background-color: navajowhite;
+    max-width: 308px;
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    z-index: 1;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid green;
+}
+.form label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
