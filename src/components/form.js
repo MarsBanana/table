@@ -34,7 +34,7 @@ class Form extends React.Component {
         const amount = this.state.amount;
         const price = this.state.price;
         if (this.props.whichForm) {
-            this.props.changeItem(id, name, amount, price);
+            this.props.changeItem(id, name, amount, price, this.props.index);
             this.props.submit(null);
         } else {
             this.props.addItem(name, amount, price);
@@ -65,7 +65,7 @@ class Form extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        changeItem: (id, name, amount, price) => dispatch(changeItem(id, name, amount, price)),
+        changeItem: (id, name, amount, price, index) => dispatch(changeItem(id, name, amount, price, index)),
         addItem: (name, amount, price) => dispatch(addItem(name, amount, price)),
     };
 };

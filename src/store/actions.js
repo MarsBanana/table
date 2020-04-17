@@ -21,12 +21,13 @@ export const deleteItem = (id) => ({
     id,
 });
 
-export const changeItem = (id, name, amount, price) => ({
+export const changeItem = (id, name, amount, price, index) => ({
     type: CHANGE,
     id,
     name,
     amount,
     price,
+    index,
 });
 
 export const sort = (sortType) => ({

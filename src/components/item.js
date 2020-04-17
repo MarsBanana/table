@@ -16,7 +16,7 @@ class Item extends React.Component {
                         <td key={id + "name"}>{name}</td>
                         <td key={id + "amount"}>{amount}</td>
                         <td key={id + "price"}>{price}</td>
-                        <td key={id + "change"} className="ch" onClick={() => this.props.changeForm(this.props.item)}>
+                        <td key={id + "change"} className="ch" onClick={() => this.props.changeForm(this.props.item, this.props.index)}>
                             change
                         </td>
                         <td key={id + "delete"} className="del" onClick={() => this.delete(id)}>

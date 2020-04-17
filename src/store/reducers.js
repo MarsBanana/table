@@ -15,7 +15,7 @@ const itemsTable = (state = [], action) => {
             return [...state.slice(0, index), ...state.slice(index + 1)];
         case "CHANGE":
             let newState = state.slice();
-            newState[action.id] = {
+            newState[action.index] = {
                 id: action.id,
                 name: action.name,
                 amount: action.amount,

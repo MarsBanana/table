@@ -11,15 +11,17 @@ class TableView extends React.Component {
         this.state = {
             chooseItem: null,
             changingItem: false,
+            index: null,
         };
     }
     componentDidMount() {
         this.props.sort("id");
     }
-    changeForm(item) {
+    changeForm(item, index) {
         this.setState({
             chooseItem: item,
             changingItem: !this.state.changingItem,
+            index: index,
         });
     }
     deleteItem(id) {
@@ -28,7 +30,9 @@ class TableView extends React.Component {
     render() {
         return (
             <React.Fragment>
-                {this.state.changingItem ? <Form item={this.state.chooseItem} whichForm={true} submit={this.changeForm.bind(this)} /> : null}
+                {this.state.changingItem ? (
+                    <Form item={this.state.chooseItem} index={this.state.index} whichForm={true} submit={this.changeForm.bind(this)} />
+                ) : null}
                 <table>
                     <thead>
                         <tr key="head">
